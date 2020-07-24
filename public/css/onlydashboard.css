@@ -1,0 +1,70 @@
+/* dashboard area style */
+
+.card {
+    margin-bottom: 15px;
+  }
+
+.card-header {
+    color: #fff;
+    background-color: #90218a;
+}
+
+img.card-img {
+    width: 150px;
+}
+.textalincenterboth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.textalincenterboth a {
+    background: #90218a;
+    border: #90218a;
+}
+
+.all-application-link{
+    float: right;
+    color: #fff;
+}
+.all-application-link:hover{
+    float: right;
+    color: #fff;
+
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background: #90218a !important;
+    border-color: #90218a !important;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #90218a !important;
+    border-color: #90218a !important;
+}
+
+.dashboard-total-top .card {
+    color: #fff;
+    background-color: #90218a;
+    border: 1px solid rgb(144, 33, 138);
+    text-align: center;
+}
+
+.custom-col-sm .col-sm:nth-child(1){
+width: 33%;
+float: left;
+}
+.custom-col-sm .col-sm:nth-child(2){
+    width: 33%;
+    float: left;
+}
+.custom-col-sm .col-sm:nth-child(3){
+    width: 24%;
+    float: left;
+}
+
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #683091;
+}

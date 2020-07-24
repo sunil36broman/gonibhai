@@ -1,0 +1,141 @@
+/* app blade style */
+.parent-margin {
+    background: #f7f7f7;
+    padding-top: 50px;
+    min-height: 600px;
+}
+/* Header area style */
+.navbar  .navbar-nav {
+  -ms-flex-direction: row !important;
+  flex-direction: row !important;
+}
+.navbar-nav .nav-link {
+  padding: 10px 10px;
+}
+
+.bg-dark {
+  background-color: #683091 !important;
+}
+
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 1rem;
+  background-color: initial !important;
+  box-shadow: inset 0px 0 0 rgba(0, 0, 0, .25) !important;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 92px 0 0 !important;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+
+
+
+.logincustom .card-header {
+  padding: .75rem 1.25rem;
+  margin-bottom: 0;
+  color: #fff;
+  background-color: rgb(104, 48, 145);
+  border-bottom: 1px solid rgb(104, 48, 145);
+}
+
+.row.justify-content-center.logincustom {
+  margin-top: 50px;
+}
+
+.applicationindex .nav-item a {
+  color: #000 !important;
+}
+
+.applicationindex .nav-pills .nav-link.active, .applicationindex .nav-pills .show>.nav-link {
+  color: #fff !important;
+}
+
+
+.resetButton{
+    float: right;
+    width: 200px;
+}
+.previewButton{
+  float: left;
+  width: 200px;
+}
+
+
+.buttonArea{
+  border-top: 1px solid #ddd;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.recommendationArea{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.applicationHeader{
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+
+.showapplication .table td, .showapplication .table th {
+  padding: .35rem;
+}
+
+
+.file {
+  position: relative;
+  overflow: hidden;
+}
+.file input {
+  position: absolute;
+  font-size: 50px;
+  opacity: 0;
+  right: 0;
+  top: 0;
+}
+
+.btn-group-lg>.btn, .btn-lg {
+  padding: 0.2rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: .3rem;
+}
+
+.form-check {
+  position: relative;
+  padding-bottom: 10px;
+  display: block;
+  padding-left: 1.25rem;
+}
+
+.btn-success {
+  
+  margin-bottom: 10px;
+}
+
+table thead{
+  display: none;
+}
+
+table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+  background-color: #f1f1f1;
+  width: 165px;
+}
+.dataTables_wrapper .dataTables_filter input {
+  margin-left: 0.5em;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+img.card-img {
+  width: 150px;
+  height: 150px;
+}
