@@ -8,9 +8,28 @@
     <div class="row">
         <div class="col-md-12">
             <h4 class="applicationHeader">Application for government accommodation under the PWD Dhaka</h4>
+            <a href="{{action('ApplicationController@downloadPDF', $application->id)}}"><i style="
+    font-size: 25px;
+    color: #932ae0;
+    display: inline-block;
+"
+            class="fa fa-file-pdf-o" aria-hidden="true"></i>
+</a>
+
+
+        @if ($errors->any())
+          <div class="alert alert-danger">
+              <ul>
+                  @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+          </div>
+        @endif
+
 
             <!-- <form action="{{ route('applications.store') }}" method="POST" enctype="multipart/form-data"> -->
-            <form action="{{ route('applications.update',$application->id) }}" method="POST" enctype="multipart/form-data">
+            <form onSubmit="return confirm('Do you want to submit?') " action="{{ route('applications.update',$application->id) }}" method="POST" enctype="multipart/form-data">
                @csrf
                @method('PUT')
 
@@ -118,6 +137,41 @@
                         <img src="{{URL::to('/')}}/images/{{ $application->upload_photo }}" class="card-img" alt="...">
                     </div>
 
+
+                    @if($application->file_number==NULL)
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                       
+                       <div class="form-group">
+                            <strong>File number:</strong>
+                            <input required type="text" name="file_number" class="form-control" placeholder="File Number">
+                        </div>
+                    </div> 
+                    @endif
+
+
+                    @if($application->status==3)
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-check">
+                            <input required class="form-check-input" name="pontyAsDatenewSelected" type="radio" value="{{$application->pontyAsDatenew}}" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                               Get house on pointy as 1 ({{$application->pontyAsDatenew}})
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input required class="form-check-input" name="pontyAsDatenewSelected" type="radio" value="{{$application->pontyAsDatenew2}}" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                               Get house on pointy as 2 ({{$application->pontyAsDatenew2}})
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input required class="form-check-input" name="pontyAsDatenewSelected" type="radio" value="{{$application->pontyAsDatenew3}}" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                               Get house on pointy as 3 ({{$application->pontyAsDatenew3}})
+                            </label>
+                        </div>
+                    </div>
+                    @endif
+                    
                     <div class="col-xs-12 col-sm-12 col-md-12">
                          <strong>Whether any loan was obtained from Govt for construction of such house / houses. </strong>
                          <br><strong>Yes</strong>
@@ -187,8 +241,8 @@
                                         </label>
                                     </div> -->
                                     <div class="form-group">
-                                        <strong>Remarks</strong>
-                                        <textarea required class="form-control" style="height:70px" name="accommodation" placeholder="Remarks"></textarea>
+                                        <strong>Comment</strong>
+                                        <textarea required class="form-control" style="height:70px" name="accommodation" placeholder="Comment"></textarea>
                                     </div>
                            </div>
 
@@ -260,7 +314,7 @@
                         <div class="form-check">
                             <input required class="form-check-input" <?php echo ($application->status==3 && !$application->approved_executive_engineer? ' ' : ' disabled');?> <?php echo ($application->approved_executive_engineer == 1 ? ' checked' : '');?> name="approved_executive_engineer" type="checkbox" value="1" id="defaultCheck1">
                             <label class="form-check-label" for="defaultCheck1">
-                            Approved by Executive Engineer  
+                            Forwarded by Executive Engineer  
                             
 
                                 @if($application->recommendation_executive!=null || $application->recommendation_executive_file!=null),
@@ -293,7 +347,7 @@
                         <div class="form-check">
                             <input required class="form-check-input" <?php echo ($application->status==2 && !$application->approved_estate_officer? ' ' : ' disabled');?> <?php echo ($application->approved_estate_officer == 1 ? ' checked' : '');?> name="approved_estate_officer" type="checkbox" value="1" id="defaultCheck1">
                             <label class="form-check-label" for="defaultCheck1">
-                            Approved by Estate Officer 
+                            Forwarded by Estate Officer 
                             
                              
                                
@@ -328,7 +382,7 @@
                         <div class="form-check">
                             <input required class="form-check-input" <?php echo ($application->status==1 && !$application->approved_sectional_officer? ' ' : ' disabled');?>  <?php echo ($application->approved_sectional_officer? ' checked' : '');?> name="approved_sectional_officer" type="checkbox" value="1" id="defaultCheck1" >
                             <label class="form-check-label" for="defaultCheck1">
-                            Approved by Sectional Officer  
+                            Forwarded by Sectional Officer  
                                 @if($application->recommendation_sectional!=null || $application->recommendation_sectional_file!=null),
                                   <a href="#" data-toggle="modal" data-target="#exampleModal">
                                     View

@@ -50,7 +50,7 @@
                     <div class="col-xs-4 col-sm-4 col-md-4">
                         <div class="form-group">
                             <strong>Date of Joining:</strong>
-                            <input required data-date-format="dd/mm/yyyy" id="dateOfJoining" type="text" value="{{ $application->date_of_joining }}" name="date_of_joining" class="form-control" placeholder="Date of Joining">
+                            <input required  type="text" value="{{ $application->date_of_joining }}" name="date_of_joining" class="form-control" placeholder="Date of Joining">
 
                         </div>
                         <!-- <div class="form-group">
@@ -66,13 +66,13 @@
                     <div class="col-xs-4 col-sm-4 col-md-4">
                         <div class="form-group">
                             <strong>In the Department:</strong>
-                            <input required type="text" value="{{ $application->department_name }}" name="department_name" class="form-control" placeholder="In the Department:">
+                            <input required data-date-format="dd/mm/yyyy" id="dateOfJoining" type="text" value="{{ $application->department_name }}" name="department_name" class="form-control" placeholder="In the Department:">
                         </div>
                     </div>
                     <div class="col-xs-4 col-sm-4 col-md-4">
                         <div class="form-group">
                             <strong>In Present Posting:</strong>
-                            <input required type="text" value="{{ $application->present_posting }}" name="present_posting" class="form-control" placeholder="In Present Posting">
+                            <input required data-date-format="dd/mm/yyyy" id="dateOfJoining2" type="text" value="{{ $application->present_posting }}" name="present_posting" class="form-control" placeholder="In Present Posting">
                         </div>
                     </div>
                 </div>
@@ -352,6 +352,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
 <script type="text/javascript">
+     $('#dateOfJoining2').datepicker({
+        weekStart: 1,
+        daysOfWeekHighlighted: "6,0",
+        autoclose: true,
+        todayHighlight: true,
+        format: 'yyyy/mm/dd'
+    });
+    $('#dateOfJoining2').datepicker("setDate", new Date());
+
+
     $('#dateOfJoining').datepicker({
         weekStart: 1,
         daysOfWeekHighlighted: "6,0",

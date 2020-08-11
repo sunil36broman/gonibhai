@@ -8,6 +8,7 @@ use App\Product;
 use App\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PDF;
 
 
 class ApplicationController extends Controller
@@ -29,6 +30,43 @@ class ApplicationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+
+
+    public function totals(){
+        $peindingApplications=Application::orderBy('created_at', 'DESC')->get();
+
+        return view('application.totals',compact('peindingApplications'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
+    } 
+    public function pending(){
+        $peindingApplications=Application::where('status', '=', 1)->orderBy('created_at', 'DESC')->get();
+
+        return view('application.pending',compact('peindingApplications'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
+    } 
+    public function approved(){
+        $peindingApplications=Application::where('status', '=', 3)->orderBy('created_at', 'DESC')->get();
+
+        return view('application.approved',compact('peindingApplications'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
+    } 
+    public function rejected(){
+        $peindingApplications=Application::where('status', '=', 5)->orderBy('created_at', 'DESC')->get();
+
+        return view('application.rejected',compact('peindingApplications'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
+    } 
+
+
+
+    public function downloadPDF($id){
+        $application = Application::find($id);
+
+        $pdf = PDF::loadView('pdf', compact('application'));
+        return $pdf->download('application.pdf');
+    } 
     public function index()
     {
         $active_status="";
@@ -224,10 +262,23 @@ class ApplicationController extends Controller
         //     'name' => 'required',
         //     'status' => 'required',
         // ]);
+
+        // $this->validate($request,[
+        //     'file_number'          => 'required|max:10|unique:applications'
+        // ]);
+        if($request->has('file_number')){
+            $request->validate([
+                'file_number' => 'required|max:10|unique:mysql2.applications'
+            ]);
+        }
+
         //  $sadas=Application::find($application->id);
         
 
         $napplication = Application::find($application->id);
+       
+        //dd($napplication);
+        
         if($request->status=="approved"){
            if($application->status==3){
                if($request->has('approved_superintendent_engineer')){
@@ -264,6 +315,7 @@ class ApplicationController extends Controller
             $napplication->approved_executive_engineer=1;
 
             $napplication->recommendation_executive=$request->accommodation;
+            $napplication->pontyAsDatenewSelected=$request->pontyAsDatenewSelected;
             
             if($request->hasFile('accommodation_file')){
                 $superintending_engineer = $request->file('accommodation_file');
@@ -291,6 +343,9 @@ class ApplicationController extends Controller
             $napplication->approved_sectional_officer=1;
 
             $napplication->recommendation_sectional=$request->accommodation;
+            if($request->has('file_number')){
+            $napplication->file_number=$request->file_number;
+            }
            
             if($request->hasFile('accommodation_file')){
                 $superintending_engineer = $request->file('accommodation_file');

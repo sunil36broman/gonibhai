@@ -52,10 +52,14 @@ class HomeeController extends Controller
         //     'detail' => 'required',
         // ]);
 
-        $this->validate($request, [
+        // $this->validate($request, [
+        //     'email' => 'required|email|unique:users,email',
+        //     'password' => 'required|same:confirm-password'
+            
+        // ]);
+        $request->validate([
             'email' => 'required|email|unique:users,email',
             'password' => 'required|same:confirm-password'
-            
         ]);
 
         //dd($request->all());
@@ -122,6 +126,8 @@ class HomeeController extends Controller
             $application->areas_where_he_wants_to = $request->areas_where_he_wants_to;
             $application->ponty_as_date = $request->ponty_as_date;
             $application->pontyAsDatenew = $request->pontyAsDatenew;
+            $application->pontyAsDatenew2 = $request->pontyAsDatenew2;
+            $application->pontyAsDatenew3 = $request->pontyAsDatenew3;
 
             if($request->hasFile('executive_engineer')){
                 $executive_engineer = $request->file('executive_engineer');

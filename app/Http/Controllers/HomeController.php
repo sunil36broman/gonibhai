@@ -24,9 +24,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-       
+
+
+
        // $this->middleware('auth');
        $totalApplication=Application::get()->count();
+
+      
+
        $totalPending=Application::where('status', '=', 1)->orderBy('created_at', 'DESC')->get()->count();
        $totalRejected=Application::where('status', '=', 5)->orderBy('created_at', 'DESC')->get()->count();
        $totalHandOver=Application::where('status', '=', 4)->orderBy('created_at', 'DESC')->get()->count();

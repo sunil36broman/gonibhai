@@ -22,39 +22,39 @@
         </div>
     </div>
     @else
-     <div class="row dashboard-total-top">
+     <div class="row dashboard-total-top dashboardmain">
         <div class="col-sm">
             <div class="card">
-                <div class="card-body dashboard-top">
+                <a href="{{ route('totals') }}"><div class="card-body dashboard-top">
                     <h6>Total Application</h6>
                     <h3>{{$totalApplication}}</h3>
-                </div>
+                </div></a>
             </div>
         </div>
         <div class="col-sm">
             <div class="card">
-                <div class="card-body dashboard-top">
+                <a href="{{ route('pending') }}"><div class="card-body dashboard-top">
                      <h6>Total Pending</h6>
                     <h3>{{$totalPending}}</h3>
                      
                     
-                </div>
+                </div></a>
             </div>
         </div>
         <div class="col-sm">
             <div class="card">
-                <div class="card-body dashboard-top">
+            <a href="{{ route('approved') }}"><div class="card-body dashboard-top">
                     <h6>Total Approved</h6>
                     <h3>{{$totalApproved}}</h3>
-                </div>
+                </div></a>
             </div>
         </div>
         <div class="col-sm">
             <div class="card">
-                <div class="card-body dashboard-top">
+            <a href="{{ route('rejected') }}"><div class="card-body dashboard-top">
                      <h6>Total Rejected</h6>
                     <h3>{{$totalRejected}}</h3>    
-                </div>
+                </div></a>
             </div>
         </div>
      </div>
@@ -108,7 +108,7 @@
                                     <td>
                                         <div class="card-body ">
                                             <p class="card-text">Name: {{ $product->name }}</p>
-                                            <p class="card-text">Reference Number: {{ $product->refrence_id }}</p>
+                                            <p class="card-text">File Number: {{ $product->file_number }}</p>
                                             <p class="card-text">Designation: {{ $product->designation }}</p>
                                             <p class="card-text">Department Name: {{ $product->department_name }}</p>
                                         </div>

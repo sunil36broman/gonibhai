@@ -21,7 +21,13 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $data = User::orderBy('id','DESC')->paginate(5);
+
+
+
+      // dd(User::whereHas("roles", function($q){ $q->where("name", '!=', "User"); })->get());
+
+        //$data = User::orderBy('id','DESC')->paginate(5);
+        $data = User::whereHas("roles", function($q){ $q->where("name", '!=', "User"); })->paginate(5);
         return view('users.index',compact('data'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }

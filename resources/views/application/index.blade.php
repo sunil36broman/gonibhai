@@ -75,9 +75,10 @@
                                     <td>
                                         <div class="card-body ">
                                             <p class="card-text">Name: {{ $product->name }}</p>
-                                            <p class="card-text">Reference Number: {{ $product->refrence_id }}</p>
+                                            <p class="card-text">File Number: {{ $product->file_number }}</p>
                                             <p class="card-text">Designation: {{ $product->designation }}</p>
                                             <p class="card-text">Department Name: {{ $product->department_name }}</p>  
+                                            <p class="card-text">Date of publication: {{ $product->created_at }}</p>
                                         </div>
                                     </td>
                                     <td>
@@ -127,9 +128,10 @@
                                     <td>
                                         <div class="card-body ">
                                             <p class="card-text">Name: {{ $product->name }}</p>
-                                            <p class="card-text">Reference Number: {{ $product->refrence_id }}</p>
+                                            <p class="card-text">File Number: {{ $product->file_number }}</p>
                                             <p class="card-text">Designation: {{ $product->designation }}</p>
                                             <p class="card-text">Department Name: {{ $product->department_name }}</p>
+                                            <p class="card-text">Date of publication: {{ $product->created_at }}</p>
                                         </div>
                                     </td>
                                     <td>
@@ -182,9 +184,10 @@
                                     <td>
                                         <div class="card-body ">
                                              <p class="card-text">Name: {{ $product->name }}</p>
-                                            <p class="card-text">Reference Number: {{ $product->refrence_id }}</p>
+                                            <p class="card-text">File Number: {{ $product->file_number }}</p>
                                             <p class="card-text">Designation: {{ $product->designation }}</p>
                                             <p class="card-text">Department Name: {{ $product->department_name }}</p>
+                                            <p class="card-text">Date of publication: {{ $product->created_at }}</p>
                                         </div>
                                     </td>
                                     <td>
@@ -234,9 +237,10 @@
                                     <td>
                                         <div class="card-body ">
                                             <p class="card-text">Name: {{ $product->name }}</p>
-                                            <p class="card-text">Reference Number: {{ $product->refrence_id }}</p>
+                                            <p class="card-text">File Number: {{ $product->file_number }}</p>
                                             <p class="card-text">Designation: {{ $product->designation }}</p>
                                             <p class="card-text">Department Name: {{ $product->department_name }}</p>
+                                            <p class="card-text">Date of publication: {{ $product->created_at }}</p>
                                         </div>
                                     </td>
                                     <td>
@@ -289,9 +293,10 @@
                                     <td>
                                         <div class="card-body ">
                                             <p class="card-text">Name: {{ $product->name }}</p>
-                                            <p class="card-text">Reference Number: {{ $product->refrence_id }}</p>
+                                            <p class="card-text">File Number: {{ $product->file_number }}</p>
                                             <p class="card-text">Designation: {{ $product->designation }}</p>
                                             <p class="card-text">Department Name: {{ $product->department_name }}</p>
+                                            <p class="card-text">Date of publication: {{ $product->created_at }}</p>
                                         </div>
                                     </td>
                                     <td>

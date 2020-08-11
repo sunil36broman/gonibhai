@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 24, 2020 at 09:40 AM
+-- Generation Time: Aug 11, 2020 at 11:18 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.2.32
 
@@ -20,84 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `laravel`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `applications`
---
-
-CREATE TABLE `applications` (
-  `id` bigint(20) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `refrence_id` varchar(100) DEFAULT NULL,
-  `designation` varchar(50) NOT NULL,
-  `fathers_name` varchar(50) NOT NULL,
-  `mothers_name` varchar(50) NOT NULL,
-  `date_of_joining` date NOT NULL,
-  `department_name` varchar(50) NOT NULL,
-  `present_posting` varchar(50) DEFAULT NULL,
-  `upload_joining_letter` varchar(50) NOT NULL,
-  `scale` varchar(50) NOT NULL,
-  `present_salary` varchar(100) NOT NULL,
-  `pay_including_special_pay_of_any` varchar(50) NOT NULL,
-  `marital_status` enum('single','married') NOT NULL,
-  `mobile_number` varchar(50) NOT NULL,
-  `spouse_name` varchar(50) NOT NULL,
-  `number_of_family_members` varchar(50) NOT NULL,
-  `any_house` enum('himHer','spouse') NOT NULL,
-  `legally_separated` varchar(50) NOT NULL,
-  `date` date NOT NULL,
-  `upload_photo` varchar(50) NOT NULL,
-  `loan` enum('yes','no') NOT NULL,
-  `load_detail` text NOT NULL,
-  `date_of_loan` varchar(100) NOT NULL,
-  `loan2` enum('yes','no') DEFAULT NULL,
-  `load_detail2` varchar(100) DEFAULT NULL,
-  `date_of_loan2` varchar(100) DEFAULT NULL,
-  `flat_allotted` enum('yes','no') NOT NULL,
-  `accommodation_detail` text DEFAULT NULL,
-  `areas_where_he_wants_to` varchar(50) NOT NULL,
-  `ponty_as_date` date NOT NULL,
-  `pontyAsDatenew` varchar(100) DEFAULT NULL,
-  `executive_engineer` varchar(50) NOT NULL,
-  `superintending_engineer` varchar(50) NOT NULL,
-  `signature_upload` varchar(50) NOT NULL,
-  `action_by` varchar(50) NOT NULL,
-  `approved_sectional_officer` varchar(50) DEFAULT NULL,
-  `approved_estate_officer` varchar(50) DEFAULT NULL,
-  `approved_executive_engineer` varchar(50) DEFAULT NULL,
-  `approved_superintendent_engineer` varchar(50) DEFAULT NULL,
-  `status` varchar(50) NOT NULL,
-  `recommendation_sectional` varchar(100) DEFAULT NULL,
-  `recommendation_estate` varchar(100) DEFAULT NULL,
-  `recommendation_executive` varchar(100) DEFAULT NULL,
-  `recommendation_superintendent` varchar(100) DEFAULT NULL,
-  `recommendation_sectional_file` varchar(100) DEFAULT NULL,
-  `recommendation_estate_file` varchar(100) DEFAULT NULL,
-  `recommendation_executive_file` varchar(100) DEFAULT NULL,
-  `recommendation_superintendent_file` varchar(100) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `applications`
---
-
-INSERT INTO `applications` (`id`, `name`, `refrence_id`, `designation`, `fathers_name`, `mothers_name`, `date_of_joining`, `department_name`, `present_posting`, `upload_joining_letter`, `scale`, `present_salary`, `pay_including_special_pay_of_any`, `marital_status`, `mobile_number`, `spouse_name`, `number_of_family_members`, `any_house`, `legally_separated`, `date`, `upload_photo`, `loan`, `load_detail`, `date_of_loan`, `loan2`, `load_detail2`, `date_of_loan2`, `flat_allotted`, `accommodation_detail`, `areas_where_he_wants_to`, `ponty_as_date`, `pontyAsDatenew`, `executive_engineer`, `superintending_engineer`, `signature_upload`, `action_by`, `approved_sectional_officer`, `approved_estate_officer`, `approved_executive_engineer`, `approved_superintendent_engineer`, `status`, `recommendation_sectional`, `recommendation_estate`, `recommendation_executive`, `recommendation_superintendent`, `recommendation_sectional_file`, `recommendation_estate_file`, `recommendation_executive_file`, `recommendation_superintendent_file`, `created_at`, `updated_at`) VALUES
-(1, 'www', '8518215680', 'wwww', 'www', 'www', '2020-07-23', 'fff', 'ffff', '1595441717.jpg', 'fff', '4444', 'fff', 'married', 'fff', 'ff', 'fff', 'spouse', 'fff', '2020-07-23', '1595441717.png', 'no', 'gggg', '2020/07/23', 'yes', NULL, '2020/07/23', 'no', NULL, 'Badda, Dhaka', '2020-07-23', NULL, '1595441717.png', '1595441717.jpg', '1595441717.jpg', '1', '1', '1', NULL, NULL, '3', '', '', '', '', '', NULL, NULL, NULL, '2020-06-30 02:59:24', '2020-07-24 12:43:50'),
-(2, 'sdfs', '8518215620', 'sdfsdf', 'sdf', 'sdfsdf', '2020-07-22', 'sdfsdf', 'sdfsdf', '1595440419.png', 'sdfsf', '', 'sdfsdf', 'married', 'sdf', 'sdfsf', 'sdfsdf', 'spouse', 'sdfsdf', '2020-07-22', '1595440419.png', 'no', 'fghfgh', '', 'yes', '', '', 'no', 'fghfgh', '1', '2020-07-22', NULL, '1595440419.png', '1595440419.png', '1595440419.jpg', '1', '1', NULL, NULL, NULL, '2', '', '', '', '', '', NULL, NULL, NULL, '2020-06-30 06:31:18', '2020-07-23 04:41:47'),
-(3, 'rrr', '8518215630', 'rrr', 'rrr', 'rrr', '2020-07-15', 'rrr', 'rrr', '1594633179.jpg', 'rr', '', 'rrrr', 'married', '1750637792', 'rr', 'rrr', 'spouse', 'rrr', '2020-07-15', '1594633179.jpg', 'no', 'rrrr', '', 'yes', '', '', 'no', 'rrrr', '3', '2020-07-09', NULL, '1594633179.png', '1594633179.png', '1594633179.png', '2', NULL, NULL, NULL, NULL, '1', '', '', '', '', '', NULL, NULL, NULL, '2020-07-13 03:39:39', '2020-07-21 21:40:27'),
-(4, 'qwqwq', '8518215631', 'qwqwqw', 'qwqwqw', 'qwqwqwqw', '2020-07-31', 'qwqwqw', 'qwqwqw', '1594670788.jpg', 'ffffff', '', 'qwqw', 'married', '1750637792', 'qwqw', 'qwqw', 'spouse', 'qwqw', '2020-07-22', '1594670788.jpg', 'no', 'qwqw', '', 'yes', '', '', 'no', 'qwqw', '3', '2020-07-23', NULL, '1594670788.jpg', '1594670788.jpg', '1594670788.jpg', '1', NULL, NULL, NULL, NULL, '1', '', '', '', '', '', NULL, NULL, NULL, '2020-07-13 14:06:28', '2020-07-21 21:40:17'),
-(5, 'aaaaddd', '8518215632', 'ddddd', 'sdfsdf', 'sdfsdf', '2020-07-30', 'sdfsdf', 'sdfsdfdsf', '1595359403.jpg', 'sfsdf', '', 'sdfsdf', 'married', 'sdfsdf', 'sdfsdf', 'sdfsdf', 'spouse', 'sdfsdf', '2020-07-16', '1595359403.png', 'no', 'sdfsdf', '', 'yes', '', '', 'no', 'sdfsdf', '3', '2020-07-30', NULL, '1595359403.png', '1595359403.png', '1595359403.png', '3', NULL, NULL, NULL, NULL, '1', '', '', '', '', '', NULL, NULL, NULL, '2020-07-22 02:23:23', '2020-07-22 02:23:23'),
-(6, 'sdfsdf', '8518215633', 'sdfsdfsdf', 'sdfsdf', 'sdfsdf', '2020-07-31', 'sdfs', 'sdfsdf', '1595359779.png', 'sdfsdf', '', 'sdfsdf', 'married', 'sdfsdf', 'sdf', 'sdfsd', 'spouse', 'sdfsdf', '2020-07-30', '1595359779.png', 'no', 'sdfsdf', '', 'yes', '', '', 'no', 'sdfsdf', '2', '2020-07-22', NULL, '1595359779.png', '1595359779.jpg', '1595359779.jpg', '4', NULL, NULL, NULL, NULL, '1', '', '', '', '', '', NULL, NULL, NULL, '2020-07-22 02:29:39', '2020-07-22 02:29:39'),
-(7, 'backupwordpress', '8518215634', 'sdfsdfs', 'dfgdf', 'gdfgdfg', '2020-07-30', 'dfgdfg', 'sdfsdfdsf', '1595360007.jpg', 'dfgdfg', '', 'dfgdfg', 'married', 'dfgdfg', 'dfg', 'dfgdfg', 'spouse', 'dfgdfg', '2020-07-21', '1595360007.png', 'no', 'dfgdfg', '', 'yes', '', '', 'no', 'dfgdfg', '3', '2020-07-29', NULL, '1595360007.png', '1595360007.png', '1595360007.jpg', '5', NULL, NULL, NULL, NULL, '1', '', '', '', '', '', NULL, NULL, NULL, '2020-07-22 02:33:27', '2020-07-22 02:33:27'),
-(10, 'sdfsdf', '8518215636', 'sdfsdf', 'dgdfg', 'dfgdfg', '2020-07-21', 'dfg', 'dfgdfg', '1595367579.png', 'dfgdfg', '', 'dfgdfg', 'married', 'sdfsdf', 'dfg', 'dfgdfg', 'spouse', 'dfgdfg', '2020-07-30', '1595367579.png', 'no', 'dfgdfg', '', 'yes', '', '', 'no', 'dfgdfg', '2', '2020-07-30', NULL, '1595367579.jpg', '1595367579.png', '1595367579.png', '8', NULL, NULL, NULL, NULL, '1', '', '', '', '', '', NULL, NULL, NULL, '2020-07-22 04:39:39', '2020-07-22 04:39:39'),
-(12, 'abirn', '4227818501', 'abirde', 'abirf', 'abirm', '2020-07-23', 'abird', 'abirp', '1595562489.jpg', '4', '33333', 'dfgdfg', 'married', '6555', 'hhhh', 'nnnn', 'spouse', 'llll', '2020-07-24', '1595562489.jpg', 'no', '777', '2020/07/24', 'no', '666', '2020/07/24', 'no', 'gggg', 'Badda, Dhaka', '2020-07-25', 'hghg', '1595562489.jpg', '1595562489.jpg', '1595562489.jpg', '12', '1', '1', '1', '1', '4', 'thik ase', 'weeee', 'yyyyy', 'gggg', '', '', '', '', '2020-07-24 10:48:09', '2020-07-24 11:20:31'),
-(13, 'sdfsdf', '2783537537', 'dfgdfgdfg', 'dfg', 'dfgdfg', '2020-07-23', 'dfg', 'dfg', '1595564560.jpg', '4', 'dfg', 'dfgdfg', 'married', 'dfgdfg', 'dfg', 'dfg', 'spouse', 'dfgdfg', '2020-07-15', '1595564560.jpg', 'no', 'dfgdfg', '2020/07/23', 'no', 'dfg', '2020/07/23', 'no', 'dfgdfg', 'Kuril, Dhaka', '2020-07-23', 'dfgdfgdfg', '1595564560.jpg', '1595564560.jpg', '1595564560.exe', '13', '1', '1', '1', '1', '4', 'this is section command', 'ess recc', 'excuuu', 'suu', '1595565284.jpg', '1595565946.jpg', '1595566031.jpg', '1595566052.jpg', '2020-07-24 11:22:40', '2020-07-24 11:47:32'),
-(14, 'wwww', '9462017154', 'sdfsdf', 'wwwwff', 'wwwm', '2020-07-23', 'sdfs', 'abirp', '1595567532.jpg', 'sdfsdf', 'dfg', 'dfgdfg', 'married', '6555', 'dfg', 'dfgdfg', 'spouse', 'dfgdfg', '2020-07-23', '1595567532.jpg', 'no', '456456', '2020/07/23', 'no', 'dfg', '2020/07/23', 'no', 'dfgdfg', 'Kuril, Dhaka', '2020-07-16', 'dfgdfg', '1595567532.jpg', '1595567532.png', '1595567532.png', '14', '1', '1', '1', '1', '4', 'sectoipon', 'esss', 'exxxxxxx', 'suuuuu', '1595567583.jpg', '1595567633.png', '1595567666.png', '1595567702.jpg', '2020-07-24 12:12:12', '2020-07-24 12:15:02'),
-(15, 'aaaa', '7706327038', 'sdfsdfdsf', 'sssss', 'sssss', '2020-07-23', 'ssss', '4444', '1595568299.png', '444', '444', '444', 'married', '5555', 'dfg', 'dfgdfg', 'spouse', 'dfgdfg', '2020-07-23', '1595568299.png', 'no', 'dfgfg', '2020/07/23', 'no', 'dfgdfg', '2020/07/23', 'no', 'dfgdfg', 'Badda Dhaka', '2020-07-24', 'hghg', '1595568299.png', '1595568299.jpg', '1595568299.png', '15', NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-07-24 12:24:59', '2020-07-24 12:24:59');
 
 -- --------------------------------------------------------
 
@@ -167,6 +89,8 @@ CREATE TABLE `model_has_roles` (
 
 INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (1, 'App\\User', 1),
+(1, 'App\\User', 15),
+(1, 'App\\User', 16),
 (2, 'App\\User', 2),
 (2, 'App\\User', 3),
 (2, 'App\\User', 4),
@@ -179,7 +103,9 @@ INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (2, 'App\\User', 12),
 (2, 'App\\User', 13),
 (2, 'App\\User', 14),
-(2, 'App\\User', 15),
+(2, 'App\\User', 17),
+(2, 'App\\User', 18),
+(2, 'App\\User', 19),
 (3, 'App\\User', 11);
 
 -- --------------------------------------------------------
@@ -342,7 +268,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Hardik Savani', 'admin@gmail.com', NULL, '$2y$10$PBuhCq6KvJpdh0miTNrXOOYEmkw0Xrdra634rc2kdC07U2g3yAZ1.', 'NeNWmim7kfc6z778RvoUE1pPnbkV8IQWbpC1gT4VIEwv72RhXz9t0KiZ6gul', '2020-06-26 20:36:43', '2020-06-26 20:36:43'),
+(1, 'Hardik Savani', 'admin@gmail.com', NULL, '$2y$10$PBuhCq6KvJpdh0miTNrXOOYEmkw0Xrdra634rc2kdC07U2g3yAZ1.', '23fvlgfYo4LUC5CFbDek5Xlwp1SXdfFd4gQ0nQECnt8obsymQF3o5cJcecVe', '2020-06-26 20:36:43', '2020-06-26 20:36:43'),
 (2, 'rony', 'rony@gmail.com', NULL, '$2y$10$Z4JIevlWP5/nFuAFVn.ok.XGS0gubAPICwgnueMlOmdDtGe2tHaxK', NULL, '2020-06-26 20:43:41', '2020-06-26 20:43:41'),
 (3, 'aaaaddd', 'admin1@gmail.com', NULL, '$2y$10$5My4pQLk5PkZf.sptEB3oOOqRntmmJiwVL7XxS9Ro0WPn2Imw5/Qm', NULL, '2020-07-22 02:23:23', '2020-07-22 02:23:23'),
 (4, 'sdfsdf', 'admin2@gmail.com', NULL, '$2y$10$AWF/JMS84wPHxtGWfFPegOwHprsJ4J5JD5z6Lqab7JkQqYv8mkzVO', NULL, '2020-07-22 02:29:39', '2020-07-22 02:29:39'),
@@ -356,17 +282,15 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (12, 'abirn', 'abir@gmail.com', NULL, '$2y$10$tGhnNFJRa1ZGLctkCMH6AeTZ7E0DKXqhDQ2pTvj1t/56YlS9uBhIm', NULL, '2020-07-24 10:48:09', '2020-07-24 10:48:09'),
 (13, 'sdfsdf', 'admin20@gmail.com', NULL, '$2y$10$GqDsfZE4McFayROpCxTGh.CbVI.o5HjSsD7UYiMGU/KQLyDfhBO0q', NULL, '2020-07-24 11:22:40', '2020-07-24 11:22:40'),
 (14, 'wwww', 'admin21@gmail.com', NULL, '$2y$10$w3bl0dOX8n46o3tnzvVriuxp4N77ZSL9fy6CpaST78pLBV8sL65MG', NULL, '2020-07-24 12:12:12', '2020-07-24 12:12:12'),
-(15, 'aaaa', 'admin25@gmail.com', NULL, '$2y$10$NQzTHnhx6bj2t5fexhP91O1Gt.RO79NKJLJ7YNygK/sMCjUpVq5cC', NULL, '2020-07-24 12:24:59', '2020-07-24 12:24:59');
+(15, 'aaaa', 'admin25@gmail.com', NULL, '$2y$10$yphnCQvJQYrDB5SPcut5tudzSaC7jaXFExnbs6/gZTUWKgdXWJTYO', NULL, '2020-07-24 12:24:59', '2020-08-11 13:41:46'),
+(16, 'anika', 'anika@gmail.com', NULL, '$2y$10$CwPfDeEu8ws4sBuWue8M/uJeE2wM8HMpAqa0kIpbpZwOX4XwhqjuW', NULL, '2020-08-11 13:11:49', '2020-08-11 13:41:01'),
+(17, 'varati', 'varati@gmail.com', NULL, '$2y$10$BWbjyYOO8YF4aMjyzraAAOYZz0aF595XvZrqtC73ClW/dbgytiX/C', NULL, '2020-08-12 03:22:15', '2020-08-12 03:22:15'),
+(18, 'animarany', 'animarany@gmail.com', NULL, '$2y$10$fB.dhN5s1ek8HFs9xf0YG.5kb0sqg.nvgAhqY5EfiQQ2KlIQGFRZW', NULL, '2020-08-12 03:33:22', '2020-08-12 03:33:22'),
+(19, 'wearefine', 'wearefine@gmail.com', NULL, '$2y$10$UWCkkys0KE6IlgtIAgjuMurNXzF5PDDvfqncdNvY0FfunCoygk48y', NULL, '2020-08-12 03:35:36', '2020-08-12 03:35:36');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `applications`
---
-ALTER TABLE `applications`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -430,12 +354,6 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `applications`
---
-ALTER TABLE `applications`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -469,7 +387,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables
