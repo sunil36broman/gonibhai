@@ -42,9 +42,10 @@
                                     <td>
                                         <div class="card-body ">
                                             <p class="card-text">Name: {{ $product->name }}</p>
-                                            <p class="card-text">Reference Number: {{ $product->refrence_id }}</p>
+                                            <p class="card-text">Reference Number: {{ $product->file_number }}</p>
                                             <p class="card-text">Designation: {{ $product->designation }}</p>
                                             <p class="card-text">Department Name: {{ $product->department_name }}</p>
+                                            <p class="card-text">Get house on pointy as: {{ $product->pontyAsDatenewSelected }}</p>
 
                                         </div>
                                     </td>
@@ -52,6 +53,7 @@
                                         <form action="{{ route('applications.destroy',$product->id) }}" method="POST">
                                             <!-- <a class="btn btn-info" href="{{ route('applications.show',$product->id) }}">Show</a> -->
 
+                                            <a class="btn btn-primary" href="{{ route('leave',$product->id) }}" >Leave from house</a>
                                             <a class="btn btn-primary" href="{{ route('applications.edit',$product->id) }}">View</a>
                                             @csrf
                                             @method('DELETE')

@@ -301,6 +301,7 @@ class ApplicationController extends Controller
             $napplication->approved_superintendent_engineer=1;
 
             $napplication->recommendation_superintendent=$request->accommodation;
+            $napplication->pontyAsDatenewSelected=$request->pontyAsDatenewSelected;
 
             if($request->hasFile('accommodation_file')){
                 $superintending_engineer = $request->file('accommodation_file');
@@ -309,13 +310,27 @@ class ApplicationController extends Controller
                 $napplication->recommendation_superintendent_file=$superintending_engineerFilename;
             }
 
+            if($request->hasFile('regulationUpload')){
+                $superintending_engineer1 = $request->file('regulationUpload');
+                $superintending_engineerFilename1 = time() . '.' . $superintending_engineer1->getClientOriginalExtension();
+                $superintending_engineer1->move('images/', $superintending_engineerFilename1);
+                $napplication->regulationUpload=$superintending_engineerFilename1;
+            }
+
+            if($request->hasFile('allotmentLetterUpload')){
+                $superintending_engineer2 = $request->file('allotmentLetterUpload');
+                $superintending_engineerFilename2 = time() . '.' . $superintending_engineer2->getClientOriginalExtension();
+                $superintending_engineer2->move('images/', $superintending_engineerFilename2);
+                $napplication->allotmentLetterUpload=$superintending_engineerFilename2;
+            }
+
             
         }
         if($request->has('approved_executive_engineer')){
             $napplication->approved_executive_engineer=1;
 
             $napplication->recommendation_executive=$request->accommodation;
-            $napplication->pontyAsDatenewSelected=$request->pontyAsDatenewSelected;
+           
             
             if($request->hasFile('accommodation_file')){
                 $superintending_engineer = $request->file('accommodation_file');
@@ -367,6 +382,23 @@ class ApplicationController extends Controller
     }
 
 
+    public function leave(Request $request, $id)
+    {
+       
+        $application = Application::find($id);
+        $application->pontyAsDatenewSelected =Null;
+        $application->save();
+
+
+
+        //$application->update($request->all());
+
+
+         return redirect()->route('allottee')
+                   ->with('success','House leave successfully');
+
+
+    }   
     public function updatee(Request $request, $id)
     {
        
@@ -422,6 +454,8 @@ class ApplicationController extends Controller
         $application->areas_where_he_wants_to = $request->areas_where_he_wants_to;
         $application->ponty_as_date = $request->ponty_as_date;
         $application->pontyAsDatenew = $request->pontyAsDatenew;
+        $application->pontyAsDatenew2 = $request->pontyAsDatenew2;
+        $application->pontyAsDatenew3 = $request->pontyAsDatenew3;
 
         if($request->hasFile('executive_engineer')){
             $executive_engineer = $request->file('executive_engineer');

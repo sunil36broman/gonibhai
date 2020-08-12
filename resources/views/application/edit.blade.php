@@ -115,7 +115,7 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Get house on pointy as</th>
-                                    <td>{{ $application->ponty_as_date }}</td>
+                                    <td>{{ $application->pontyAsDatenewSelected }}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Recommendation of Executive Engineer</th>
@@ -149,7 +149,7 @@
                     @endif
 
 
-                    @if($application->status==3)
+                    @if($application->status==3 && (!$application->approved_superintendent_engineer && $application->approved_executive_engineer))
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-check">
                             <input required class="form-check-input" name="pontyAsDatenewSelected" type="radio" value="{{$application->pontyAsDatenew}}" id="defaultCheck1">
@@ -249,10 +249,26 @@
                            @if ($application->status<=3)
                            <div class="col-xs-6 col-sm-6 col-md-6">
                                 
+                           @if($application->status==3 && (!$application->approved_superintendent_engineer && $application->approved_executive_engineer))
+                                <div class="file btn btn-lg btn-primary" style="margin-bottom: 10px;">
+                                     Regulation upload 
+                                    <input type="file" name="regulationUpload"/>
+                                </div>
+                            @endif    
+
                                 <div class="file btn btn-lg btn-primary">
                                     Upload
                                     <input type="file" name="accommodation_file"/>
                                 </div>
+
+                            @if($application->status==3 && (!$application->approved_superintendent_engineer && $application->approved_executive_engineer))    
+                                <div class="file btn btn-lg btn-primary" style="margin-top: 10px;">
+                                     Allotment letter upload
+                                    <input type="file" name="allotmentLetterUpload"/>
+                                </div>
+                            @endif    
+
+
                            </div>
                            <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
@@ -300,7 +316,12 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                        @if($application->recommendation_superintendent!=null), Remarks: {{$application->recommendation_superintendent}} @endif @if($application->recommendation_superintendent_file!=null), <a href="{{URL::to('/')}}/images/{{ $application->recommendation_superintendent_file }}" target="_blank" > View </a> @endif
+                                        @if($application->recommendation_superintendent!=null), Remarks: {{$application->recommendation_superintendent}} @endif @if($application->recommendation_superintendent_file!=null)</br>
+                                        <a href="{{URL::to('/')}}/images/{{ $application->recommendation_superintendent_file }}" target="_blank" > View </a></br>
+                                        <a href="{{URL::to('/')}}/images/{{ $application->regulationUpload }}" target="_blank" > Regulated File View </a></br>
+                                        <a href="{{URL::to('/')}}/images/{{ $application->allotmentLetterUpload }}" target="_blank" > Allotment Letter View </a>
+                                        
+                                         @endif
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

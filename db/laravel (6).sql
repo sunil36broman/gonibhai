@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2020 at 11:18 PM
+-- Generation Time: Aug 12, 2020 at 10:15 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.2.32
 
@@ -106,6 +106,11 @@ INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (2, 'App\\User', 17),
 (2, 'App\\User', 18),
 (2, 'App\\User', 19),
+(2, 'App\\User', 20),
+(2, 'App\\User', 21),
+(2, 'App\\User', 22),
+(2, 'App\\User', 23),
+(2, 'App\\User', 24),
 (3, 'App\\User', 11);
 
 -- --------------------------------------------------------
@@ -268,7 +273,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Hardik Savani', 'admin@gmail.com', NULL, '$2y$10$PBuhCq6KvJpdh0miTNrXOOYEmkw0Xrdra634rc2kdC07U2g3yAZ1.', '23fvlgfYo4LUC5CFbDek5Xlwp1SXdfFd4gQ0nQECnt8obsymQF3o5cJcecVe', '2020-06-26 20:36:43', '2020-06-26 20:36:43'),
+(1, 'Hardik Savani', 'admin@gmail.com', NULL, '$2y$10$PBuhCq6KvJpdh0miTNrXOOYEmkw0Xrdra634rc2kdC07U2g3yAZ1.', 'heUU3vwflxaFLIy753BKGmxGUePj2Hr1fCXeCR9OOpshqYBwgHpnhJxmc52e', '2020-06-26 20:36:43', '2020-06-26 20:36:43'),
 (2, 'rony', 'rony@gmail.com', NULL, '$2y$10$Z4JIevlWP5/nFuAFVn.ok.XGS0gubAPICwgnueMlOmdDtGe2tHaxK', NULL, '2020-06-26 20:43:41', '2020-06-26 20:43:41'),
 (3, 'aaaaddd', 'admin1@gmail.com', NULL, '$2y$10$5My4pQLk5PkZf.sptEB3oOOqRntmmJiwVL7XxS9Ro0WPn2Imw5/Qm', NULL, '2020-07-22 02:23:23', '2020-07-22 02:23:23'),
 (4, 'sdfsdf', 'admin2@gmail.com', NULL, '$2y$10$AWF/JMS84wPHxtGWfFPegOwHprsJ4J5JD5z6Lqab7JkQqYv8mkzVO', NULL, '2020-07-22 02:29:39', '2020-07-22 02:29:39'),
@@ -286,7 +291,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (16, 'anika', 'anika@gmail.com', NULL, '$2y$10$CwPfDeEu8ws4sBuWue8M/uJeE2wM8HMpAqa0kIpbpZwOX4XwhqjuW', NULL, '2020-08-11 13:11:49', '2020-08-11 13:41:01'),
 (17, 'varati', 'varati@gmail.com', NULL, '$2y$10$BWbjyYOO8YF4aMjyzraAAOYZz0aF595XvZrqtC73ClW/dbgytiX/C', NULL, '2020-08-12 03:22:15', '2020-08-12 03:22:15'),
 (18, 'animarany', 'animarany@gmail.com', NULL, '$2y$10$fB.dhN5s1ek8HFs9xf0YG.5kb0sqg.nvgAhqY5EfiQQ2KlIQGFRZW', NULL, '2020-08-12 03:33:22', '2020-08-12 03:33:22'),
-(19, 'wearefine', 'wearefine@gmail.com', NULL, '$2y$10$UWCkkys0KE6IlgtIAgjuMurNXzF5PDDvfqncdNvY0FfunCoygk48y', NULL, '2020-08-12 03:35:36', '2020-08-12 03:35:36');
+(19, 'wearefine', 'wearefine@gmail.com', NULL, '$2y$10$UWCkkys0KE6IlgtIAgjuMurNXzF5PDDvfqncdNvY0FfunCoygk48y', NULL, '2020-08-12 03:35:36', '2020-08-12 03:35:36'),
+(20, 'abirkhan', 'abirkhan@gmail.com', NULL, '$2y$10$x4udl76s.y2vObRV8P9ld.W0o/HVFVdhM7GlRS7RyKmtD91aouFaK', NULL, '2020-08-12 22:16:24', '2020-08-12 22:16:24'),
+(21, 'bachcha', 'bachcha@gmail.com', NULL, '$2y$10$B3OMPtSZdqxX0DjGWPFsdeiH2YHKCneoUJGR9j1Qc5DGfnGEbJH5K', NULL, '2020-08-12 22:32:54', '2020-08-12 22:32:54'),
+(22, 'bachchakhan', 'bachchakhan@gmail.com', NULL, '$2y$10$gIM3ZhJsYJFKY535hBhlne6LtZtw3ZIovFYd4i/Lv9B/1aB5rDinm', NULL, '2020-08-12 22:34:19', '2020-08-12 22:34:19'),
+(23, 'suman', 'suman@gmail.com', NULL, '$2y$10$xbvEvyQKd1k7zbkzt1j4huDkBmAkFjqJ3H4we.qRpt5RRJj6NaR.S', NULL, '2020-08-13 00:19:42', '2020-08-13 00:19:42'),
+(24, 'pakhi', 'pakhi@gmail.com', NULL, '$2y$10$Wi4f9nFvcj9rgTy3s5XDW.2faEyliGv4d81Or4DHDURgWz8rUI3iW', NULL, '2020-08-13 00:22:52', '2020-08-13 00:22:52');
 
 --
 -- Indexes for dumped tables
@@ -387,7 +397,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Constraints for dumped tables

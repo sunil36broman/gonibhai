@@ -27,6 +27,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('products','ProductController');
     Route::resource('applications','ApplicationController');
     Route::put('/applications/update/{id}','ApplicationController@updatee')->name('updatee');
+    Route::get('/applications/leave/{id}','ApplicationController@leave')->name('leave');
     Route::get('/allottee-manager', 'HomeController@allotteeManager')->name('allottee');
     Route::get('/downloadPDF/{id}','ApplicationController@downloadPDF');
 

@@ -118,7 +118,7 @@
     </tr>
     <tr>
         <th scope="row" width="50%">Get house on pointy as</th>
-        <td width="50%">{{ $application->ponty_as_date }}</td>
+        <td width="50%">{{ $application->pontyAsDatenewSelected }}</td>
     </tr>
    
    
