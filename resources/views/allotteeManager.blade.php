@@ -19,10 +19,15 @@
 
                 </div>
                 <div class="card-body">
-
-                         
-
-                        <table id="example7" class="display" style="width:100%">
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">House allocated list</a>
+                      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">House takeover List</a>
+                    </div>
+                  </nav>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <table id="example7" class="display" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>Image</th>
@@ -49,12 +54,23 @@
 
                                         </div>
                                     </td>
-                                    <td>
+                                    <td width="300px">
+                                         <form action="{{ route('leave',$product->id) }}" method="GET" onSubmit="return confirm('Do you want to house takeout?') ">
+                                              <button style="
+    float: left;
+    width: 70%;
+" type="submit" class="btn btn-danger btn-block">House takeout</button> 
+                                         </form>
                                         <form action="{{ route('applications.destroy',$product->id) }}" method="POST">
                                             <!-- <a class="btn btn-info" href="{{ route('applications.show',$product->id) }}">Show</a> -->
 
-                                            <a class="btn btn-primary" href="{{ route('leave',$product->id) }}" >Leave from house</a>
-                                            <a class="btn btn-primary" href="{{ route('applications.edit',$product->id) }}">View</a>
+                                            <!-- <a class="btn btn-primary" href="{{ route('leave',$product->id) }}" >Leave from house</a> -->
+                                            <a 
+                                            style="
+    float: right;
+    wi
+"
+                                            class="btn btn-primary" href="{{ route('applications.edit',$product->id) }}">View</a>
                                             @csrf
                                             @method('DELETE')
 
@@ -66,6 +82,63 @@
                             @endforeach                       
                             </tbody>
                         </table>
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <table id="example7" class="display" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Description</th>
+                                    <th>Action</th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach ($peindingApplicationsTakeout as $product)
+                                <tr>
+                                    <td> 
+                                       <div class="col-sm">
+                                       <img src="{{URL::to('/')}}/images/{{ $product->upload_photo }}" class="card-img" alt="...">
+                                       </div>
+                                    </td>
+                                    <td>
+                                        <div class="card-body ">
+                                            <p class="card-text">Name: {{ $product->name }}</p>
+                                            <p class="card-text">Reference Number: {{ $product->file_number }}</p>
+                                            <p class="card-text">Designation: {{ $product->designation }}</p>
+                                            <p class="card-text">Department Name: {{ $product->department_name }}</p>
+
+                                        </div>
+                                    </td>
+                                    <td width="300px">
+                                         
+                                        <form action="{{ route('applications.destroy',$product->id) }}" method="POST">
+                                            <!-- <a class="btn btn-info" href="{{ route('applications.show',$product->id) }}">Show</a> -->
+
+                                            <!-- <a class="btn btn-primary" href="{{ route('leave',$product->id) }}" >Leave from house</a> -->
+                                            <a 
+                                            style="
+    float: right;
+    wi
+"
+                                            class="btn btn-primary" href="{{ route('applications.edit',$product->id) }}">View</a>
+                                            @csrf
+                                            @method('DELETE')
+
+                                            <!-- <button type="submit" class="btn btn-danger">Delete</button> -->
+
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach                       
+                            </tbody>
+                        </table>
+                    </div>
+                  </div>
+
+                        
+
+                        
 
                     
                 </div>

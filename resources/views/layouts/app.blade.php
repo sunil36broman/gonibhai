@@ -15,7 +15,8 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
 
     <!-- Favicons -->
     <style>
@@ -150,6 +151,8 @@
                                         Roles
                                     </a>
 
+                                    
+
                             </div>
                         </div>
                     </li>
@@ -180,7 +183,7 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-    
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $(document).ready(function() {
             $('#example').dataTable();
@@ -192,6 +195,9 @@
             $('#example6').dataTable();
             $('#example7').dataTable();
         });
+
+
+      
     </script>
 
     @yield('javascript')

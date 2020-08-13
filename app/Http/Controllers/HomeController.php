@@ -52,9 +52,10 @@ class HomeController extends Controller
     {
        // $this->middleware('auth');
 
-       $peindingApplications = Application::where('status', '=', 4)->orderBy('created_at', 'DESC')->get();
+       $peindingApplications = Application::where('status', '=', 4)->where('pontyAsDatenewSelected', '!=', NULL)->orderBy('created_at', 'DESC')->get();
+       $peindingApplicationsTakeout = Application::where('status', '=', 4)->where('pontyAsDatenewSelected', '=', NULL)->orderBy('created_at', 'DESC')->get();
     
-      return view('allotteeManager',compact('peindingApplications'));
+      return view('allotteeManager',compact('peindingApplications','peindingApplicationsTakeout'));
        
     }
 
