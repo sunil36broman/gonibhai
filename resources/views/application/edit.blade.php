@@ -16,7 +16,8 @@
                             class="fa fa-file-pdf-o" aria-hidden="true"></i> Document Download
             </a>
             <br />
-            @if (Auth::user()->roles[0]->name=='User')
+            @if ((Auth::user()->roles[0]->name=='User') && $application->allotmentLetterUpload!=null)
+            
                <a href="{{URL::to('/')}}/images/{{ $application->allotmentLetterUpload }}" target="_blank" ><i style="
                     font-size: 25px;
                     color: #932ae0;
@@ -173,7 +174,7 @@
                         </table>
                     </div>
                     <div class="col-xs-4 col-sm-4 col-md-4">
-                        <img src="{{URL::to('/')}}/public/images/{{ $application->upload_photo }}" class="card-img" alt="...">
+                        <img src="{{URL::to('/')}}/images/{{ $application->upload_photo }}" class="card-img" alt="...">
                     </div>
 
 
