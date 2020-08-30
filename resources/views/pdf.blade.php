@@ -7,9 +7,21 @@
 
   <style>
   
+  table{border-collapse: collapse}
+
+    table, table td,table th {
+    border: solid black;
+    }
+    table {
+    border-width: 1px 1px 1px 1px;
+    }
+    table td,table th {
+    border-width: 1px 1px 1px 1px;
+    }
     table{
        
         width:100% !important;
+       
     }
     table th.super_header{
         text-align:center;
@@ -17,11 +29,21 @@
     table th{
         float:left;
         text-align:left;
+      
+       
+    }
+    table tr{
+      
+      
+     
     }
     table td{
         float:left;
         text-align:left;
+       
+        
     }
+   
     .header{
        background-color:#683091;
        color:#fff;
@@ -57,9 +79,14 @@
         <th scope="row" width="50%">Mother's Name</th>
         <td width="50%">{{ $application->mothers_name }}</td>
     </tr>
+   
     <tr>
-        <th scope="row" width="50%">Date of Joining</th>
-        <td width="50%">{{ $application->date_of_joining }}</td>
+        <th scope="row">In the Department</th>
+        <td>{{ $application->department_name }}</td>
+    </tr>
+    <tr>
+        <th scope="row">In Present Posting</th>
+        <td>{{ $application->present_posting }}</td>
     </tr>
     <tr>
         <th scope="row" width="50%">Department Name</th>
@@ -119,6 +146,17 @@
     <tr>
         <th scope="row" width="50%">Get house on pointy as</th>
         <td width="50%">{{ $application->pontyAsDatenewSelected }}</td>
+    </tr>
+
+    <tr>
+        <th scope="row">Whether any loan was obtained from Govt for construction of such house / houses.</th>
+        <td>{{ $application->loan }} | Amount: {{ $application->load_detail }} Date: {{ $application->date_of_loan }} </td>
+    </tr>
+
+    <tr>
+        <th scope="row"> Whether any loan was obtained House Building Finance Cur-or any other agency for counts of such house / houses. (Amount and date of loan be also noted)
+        </th>
+        <td>{{ $application->loan2 }} | Amount: {{ $application->load_detail2 }} Date: {{ $application->date_of_loan2 }} </td>
     </tr>
    
    

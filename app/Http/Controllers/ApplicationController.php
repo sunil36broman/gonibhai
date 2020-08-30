@@ -278,6 +278,22 @@ class ApplicationController extends Controller
         $napplication = Application::find($application->id);
        
         //dd($napplication);
+       
+        if($request->has('approved_superintendent_engineer')){
+            $napplication->super_status=$request->status;
+        }
+        if($request->has('approved_executive_engineer')){
+            $napplication->executive_status=$request->status;
+        }
+        if($request->has('approved_estate_officer')){
+            $napplication->estate_status=$request->status;
+        }
+        if($request->has('approved_sectional_officer')){
+            $napplication->sectional_status=$request->status;
+        }
+
+
+
         
         if($request->status=="approved"){
            if($application->status==3){

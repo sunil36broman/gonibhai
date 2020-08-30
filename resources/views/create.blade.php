@@ -6,6 +6,8 @@
 
 @extends('layouts.app')
 @section('stylesheet')
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
 @stop
 
@@ -84,23 +86,14 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-xs-4 col-sm-4 col-md-4">
+                   <div class="col-xs-4 col-sm-4 col-md-4">
                         <div class="form-group">
                             <strong>Date of Joining:</strong>
-                            <!-- <input required data-date-format="dd/mm/yyyy" id="dateOfJoining" type="text" name="date_of_joining" class="form-control" placeholder="Date of Joining"> -->
 
-                             <input type="text" name="date_of_joining" class="form-control" placeholder="Date of Joining"> 
+                             <!-- <input type="text" name="date_of_joining" class="form-control" placeholder="Date of Joining">  -->
 
                         </div>
-                        <!-- <div class="form-group">
-                            <strong>Date of Joining:</strong>
-                            <div class='input-group date' id='datetimepicker1'>
-                                <input type="text" name="dateOfJoining" class="form-control" placeholder="Date of Joining">
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                            </div>
-                        </div> -->
+                       
                     </div>
                     <div class="col-xs-4 col-sm-4 col-md-4">
                         <div class="form-group">
@@ -343,7 +336,7 @@
                     <div class="col-xs-4 col-sm-4 col-md-4">
                         <div class="form-group">
                             <strong>Get house on pointy as 1:</strong>
-                            <select required class="form-control" id="exampleFormControlSelect1" name="pontyAsDatenew">
+                            <select required class="form-control js-example-basic-multiple" id="exampleFormControlSelect1 pointy_one" name="pontyAsDatenew">
                                 <option value="Residence of divisional Sub-Assistant Engineers atZigatola.">Residence of divisional Sub-Assistant Engineers atZigatola.</option>
                                 <option value="Residence of divisional Sub-Assistant Engineers at Tejgaon">Residence of divisional Sub-Assistant Engineers at Tejgaon</option>
                                 <option value="Residence of divisional Sub-Assistant Engineers at Rajarba">Residence of divisional Sub-Assistant Engineers at Rajarba</option>
@@ -424,7 +417,7 @@
                     <div class="col-xs-4 col-sm-4 col-md-4">
                         <div class="form-group">
                             <strong>Get house on pointy as 2:</strong>
-                            <select required class="form-control" id="exampleFormControlSelect1" name="pontyAsDatenew2">
+                            <select required class="form-control js-example-basic-multiple_two" id="exampleFormControlSelect1 pointy_two" name="pontyAsDatenew2">
                                 <option value="Residence of divisional Sub-Assistant Engineers atZigatola.">Residence of divisional Sub-Assistant Engineers atZigatola.</option>
                                 <option value="Residence of divisional Sub-Assistant Engineers at Tejgaon">Residence of divisional Sub-Assistant Engineers at Tejgaon</option>
                                 <option value="Residence of divisional Sub-Assistant Engineers at Rajarba">Residence of divisional Sub-Assistant Engineers at Rajarba</option>
@@ -505,7 +498,7 @@
                     <div class="col-xs-4 col-sm-4 col-md-4">
                         <div class="form-group">
                             <strong>Get house on pointy as 3:</strong>
-                            <select required class="form-control" id="exampleFormControlSelect1" name="pontyAsDatenew3">
+                            <select required class="form-control js-example-basic-multiple_three" id="exampleFormControlSelect1 pointy_three" name="pontyAsDatenew3">
                                 <option value="Residence of divisional Sub-Assistant Engineers atZigatola.">Residence of divisional Sub-Assistant Engineers atZigatola.</option>
                                 <option value="Residence of divisional Sub-Assistant Engineers at Tejgaon">Residence of divisional Sub-Assistant Engineers at Tejgaon</option>
                                 <option value="Residence of divisional Sub-Assistant Engineers at Rajarba">Residence of divisional Sub-Assistant Engineers at Rajarba</option>
@@ -635,6 +628,7 @@
 @endsection
 
 @section('javascript')
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script type="text/javascript">
     $('#dateOfJoining2').datepicker({
         weekStart: 1,
@@ -708,7 +702,11 @@
     //     $( "#date_of_loan" ).datepicker();
     //     $( "#date_of_loan2" ).datepicker();
     // } );
-   
+        $(document).ready(function() {
+            $('.js-example-basic-multiple').select2();
+            $('.js-example-basic-multiple_two').select2();
+            $('.js-example-basic-multiple_three').select2();
+        });
 
 </script>
 @stop

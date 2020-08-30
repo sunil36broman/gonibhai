@@ -9,12 +9,21 @@
         <div class="col-md-12">
             <h4 class="applicationHeader">Application for government accommodation under the PWD Dhaka</h4>
             <a href="{{action('ApplicationController@downloadPDF', $application->id)}}"><i style="
-    font-size: 25px;
-    color: #932ae0;
-    display: inline-block;
-"
-            class="fa fa-file-pdf-o" aria-hidden="true"></i>
-</a>
+                    font-size: 25px;
+                    color: #932ae0;
+                    display: inline-block;
+                "
+                            class="fa fa-file-pdf-o" aria-hidden="true"></i> Document Download
+            </a>
+            <br />
+            @if (Auth::user()->roles[0]->name=='User')
+               <a href="{{URL::to('/')}}/images/{{ $application->allotmentLetterUpload }}" target="_blank" ><i style="
+                    font-size: 25px;
+                    color: #932ae0;
+                    display: inline-block;
+                "
+                            class="fa fa-file-pdf-o" aria-hidden="true"></i> Approved letter</a></br>
+            @endif
 
 
         @if ($errors->any())
@@ -55,8 +64,12 @@
                                     <td>{{ $application->mothers_name }}</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Date of Joining</th>
-                                    <td>{{ $application->date_of_joining }}</td>
+                                    <th scope="row">In the Department</th>
+                                    <td>{{ $application->department_name }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">In Present Posting</th>
+                                    <td>{{ $application->present_posting }}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Department Name</th>
@@ -103,10 +116,10 @@
                                     <td>{{ $application->date }}</td>
                                 </tr>
 
-                                <tr>
+                                <!-- <tr>
                                     <th scope="row">Please Describe here</th>
                                     <td>{{ $application->load_detail }}</td>
-                                </tr>
+                                </tr> -->
 
 
                                 <tr>
@@ -114,8 +127,16 @@
                                     <td>{{ $application->areas_where_he_wants_to }}</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Get house on pointy as</th>
-                                    <td>{{ $application->pontyAsDatenewSelected }}</td>
+                                    <th scope="row">Get House as pointy as 1</th>
+                                    <td>{{ $application->pontyAsDatenew }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Get House as pointy as 2</th>
+                                    <td>{{ $application->pontyAsDatenew2 }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Get House as pointy as 3</th>
+                                    <td>{{ $application->pontyAsDatenew3 }}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Recommendation of Executive Engineer</th>
@@ -128,72 +149,61 @@
                                 </tr>
                                
 
+                                <tr>
+                                    <th scope="row">Whether any loan was obtained from Govt for construction of such house / houses.</th>
+                                    <td>{{ $application->loan }} | Amount: {{ $application->load_detail }} Date: {{ $application->date_of_loan }} </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row"> Whether any loan was obtained House Building Finance Cur-or any other agency for counts of such house / houses. (Amount and date of loan be also noted)
+                                    </th>
+                                    <td>{{ $application->loan2 }} | Amount: {{ $application->load_detail2 }} Date: {{ $application->date_of_loan2 }} </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row"> Whether any house/flat has been allotted to him/hire by the housing Rehabilitation Directorate PWD Directorate of Accommodation act.
+</th>
+                                    <td>{{ $application->flat_allotted }}  </td>
+                                </tr>
+
+
 
 
                             </tbody>
                         </table>
                     </div>
                     <div class="col-xs-4 col-sm-4 col-md-4">
-                        <img src="{{URL::to('/')}}/images/{{ $application->upload_photo }}" class="card-img" alt="...">
+                        <img src="{{URL::to('/')}}/public/images/{{ $application->upload_photo }}" class="card-img" alt="...">
                     </div>
 
 
-                    @if($application->file_number==NULL)
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                       
-                       <div class="form-group">
-                            <strong>File number:</strong>
-                            <input required type="text" name="file_number" class="form-control" placeholder="File Number">
-                        </div>
-                    </div> 
-                    @endif
+                   
 
 
-                    @if($application->status==3 && (!$application->approved_superintendent_engineer && $application->approved_executive_engineer))
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-check">
-                            <input required class="form-check-input" name="pontyAsDatenewSelected" type="radio" value="{{$application->pontyAsDatenew}}" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">
-                               Get house on pointy as 1 ({{$application->pontyAsDatenew}})
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input required class="form-check-input" name="pontyAsDatenewSelected" type="radio" value="{{$application->pontyAsDatenew2}}" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">
-                               Get house on pointy as 2 ({{$application->pontyAsDatenew2}})
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input required class="form-check-input" name="pontyAsDatenewSelected" type="radio" value="{{$application->pontyAsDatenew3}}" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">
-                               Get house on pointy as 3 ({{$application->pontyAsDatenew3}})
-                            </label>
-                        </div>
-                    </div>
-                    @endif
+                   
                     
-                    <div class="col-xs-12 col-sm-12 col-md-12">
+                    <!-- <div class="col-xs-12 col-sm-12 col-md-12">
                          <strong>Whether any loan was obtained from Govt for construction of such house / houses. </strong>
                          <br><strong>Yes</strong>
                          <textarea class="form-control" style="height:150px" name="load_detail" placeholder="Please Describe here">{{ $application->load_detail }}</textarea>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
+                    </div> -->
+                    <!-- <div class="col-xs-12 col-sm-12 col-md-12">
                        <strong>Whether any house/flat has been allotted to him/hire by the housing Rehabilitation Directorate PWD Directorate of Accommodation act.</strong></br>
                         <strong>Yes</strong>
-                    </div>
+                    </div> -->
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <strong>What is his/her present accommodation arraignment</strong>
                         <textarea class="form-control" style="height:150px" name="accommodation_detail" placeholder="Please Describe here"> {{ $application->accommodation_detail }}</textarea>
                      </div>
 
-                     <div class="col-xs-6 col-sm-6 col-md-6" style="margin-top:25px;margin-bottom:25px">
+                     <!-- <div class="col-xs-6 col-sm-6 col-md-6" style="margin-top:25px;margin-bottom:25px">
                          <strong>Areas where he wants to</strong>
                          <br><strong>{{ $application->areas_where_he_wants_to }}</strong>
                      </div>
                      <div class="col-xs-6 col-sm-6 col-md-6" style="margin-top:25px;margin-bottom:25px">
                         <strong>Get house on pointy as:{{ $application->pontyAsDatenew }}</strong>
                         <br><strong>{{ $application->ponty_as_date }}</strong>
-                     </div>
+                     </div> -->
 
                      <!-- <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group">
@@ -231,6 +241,42 @@
                     <!-- <div class="col-xs-12 col-sm-12 col-md-12">
                         <strong>Office Approval</strong>
                     </div> -->
+
+                    @if($application->status==3 && (!$application->approved_superintendent_engineer && $application->approved_executive_engineer))
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-check">
+                            <input required class="form-check-input" name="pontyAsDatenewSelected" type="radio" value="{{$application->pontyAsDatenew}}" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                               Get house on pointy as 1 ({{$application->pontyAsDatenew}})
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input required class="form-check-input" name="pontyAsDatenewSelected" type="radio" value="{{$application->pontyAsDatenew2}}" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                               Get house on pointy as 2 ({{$application->pontyAsDatenew2}})
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input required class="form-check-input" name="pontyAsDatenewSelected" type="radio" value="{{$application->pontyAsDatenew3}}" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                               Get house on pointy as 3 ({{$application->pontyAsDatenew3}})
+                            </label>
+                        </div>
+                    </div>
+                    @endif
+
+                    @if($application->file_number==NULL)
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                       <div class="form-group">
+                            <strong>File number:</strong>
+                            <input required type="text" name="file_number" class="form-control" placeholder="File Number">
+                        </div>
+                        </div>
+                        </div>
+                    </div> 
+                    @endif
                     <div class="col-xs-6 col-sm-6 col-md-6">
                        <div class="row">
                            <div class="col-xs-12 col-sm-12 col-md-12">
@@ -246,7 +292,7 @@
                                     </div>
                            </div>
 
-                           @if ($application->status<=3)
+                           @if ($application->status <= 3)
                            <div class="col-xs-6 col-sm-6 col-md-6">
                                 
                            @if($application->status==3 && (!$application->approved_superintendent_engineer && $application->approved_executive_engineer))
@@ -256,10 +302,16 @@
                                 </div>
                             @endif    
 
+
+
+                            @if($application->status <= 3 && !($application->approved_executive_engineer))
+
                                 <div class="file btn btn-lg btn-primary">
                                     Upload
                                     <input type="file" name="accommodation_file"/>
                                 </div>
+
+                            @endif   
 
                             @if($application->status==3 && (!$application->approved_superintendent_engineer && $application->approved_executive_engineer))    
                                 <div class="file btn btn-lg btn-primary" style="margin-top: 10px;">
@@ -298,7 +350,14 @@
                             <input required class="form-check-input"<?php echo ($application->status==3 && (!$application->approved_superintendent_engineer && $application->approved_executive_engineer)? ' ' : ' disabled');?> <?php echo ($application->approved_superintendent_engineer == 1 ? ' checked' : '');?> name="approved_superintendent_engineer" type="checkbox" value="1" id="defaultCheck1">
                             <label class="form-check-label" for="defaultCheck1">
                             Approved By Superintendent Engineer 
-                            
+                                
+                                @if($application->super_status=='rejected' && $application->approved_superintendent_engineer)
+                                <i style="color:red" class="fa fa-times" aria-hidden="true"></i>
+                                @elseif($application->super_status=='approved' && $application->approved_superintendent_engineer)
+                                  <i style="color:green" class="fa fa-check" aria-hidden="true"></i>
+                                @endif
+                               
+                                
                            
                                 @if($application->recommendation_superintendent!=null || $application->recommendation_superintendent_file!=null),
                                   <a href="#" data-toggle="modal" data-target="#exampleModal4">
@@ -323,6 +382,9 @@
                                         
                                          @endif
                                         </div>
+                                       
+
+
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                         
@@ -336,7 +398,12 @@
                             <input required class="form-check-input" <?php echo ($application->status==3 && !$application->approved_executive_engineer? ' ' : ' disabled');?> <?php echo ($application->approved_executive_engineer == 1 ? ' checked' : '');?> name="approved_executive_engineer" type="checkbox" value="1" id="defaultCheck1">
                             <label class="form-check-label" for="defaultCheck1">
                             Forwarded by Executive Engineer  
-                            
+                                @if($application->executive_status=='rejected' && $application->approved_executive_engineer)
+                                <i style="color:red" class="fa fa-times" aria-hidden="true"></i>
+                                @elseif($application->executive_status=='approved' && $application->approved_executive_engineer)
+                                  <i style="color:green" class="fa fa-check" aria-hidden="true"></i>
+                                @endif
+                               
 
                                 @if($application->recommendation_executive!=null || $application->recommendation_executive_file!=null),
                                   <a href="#" data-toggle="modal" data-target="#exampleModal3">
@@ -369,8 +436,13 @@
                             <input required class="form-check-input" <?php echo ($application->status==2 && !$application->approved_estate_officer? ' ' : ' disabled');?> <?php echo ($application->approved_estate_officer == 1 ? ' checked' : '');?> name="approved_estate_officer" type="checkbox" value="1" id="defaultCheck1">
                             <label class="form-check-label" for="defaultCheck1">
                             Forwarded by Estate Officer 
-                            
-                             
+                                
+
+                                @if($application->estate_status=='rejected' && $application->approved_estate_officer)
+                                <i style="color:red" class="fa fa-times" aria-hidden="true"></i>
+                                @elseif($application->estate_status=='approved' && $application->approved_estate_officer)
+                                  <i style="color:green" class="fa fa-check" aria-hidden="true"></i>
+                                @endif
                                
                                 @if($application->recommendation_estate!=null || $application->recommendation_estate_file!=null),
                                   <a href="#" data-toggle="modal" data-target="#exampleModal2">
@@ -404,6 +476,15 @@
                             <input required class="form-check-input" <?php echo ($application->status==1 && !$application->approved_sectional_officer? ' ' : ' disabled');?>  <?php echo ($application->approved_sectional_officer? ' checked' : '');?> name="approved_sectional_officer" type="checkbox" value="1" id="defaultCheck1" >
                             <label class="form-check-label" for="defaultCheck1">
                             Forwarded by Sectional Officer  
+
+                               
+
+                                @if($application->sectional_status=='rejected' && $application->approved_sectional_officer)
+                                <i style="color:red" class="fa fa-times" aria-hidden="true"></i>
+                                @elseif($application->sectional_status=='approved' && $application->approved_sectional_officer)
+                                  <i style="color:green" class="fa fa-check" aria-hidden="true"></i>
+                                @endif
+
                                 @if($application->recommendation_sectional!=null || $application->recommendation_sectional_file!=null),
                                   <a href="#" data-toggle="modal" data-target="#exampleModal">
                                     View

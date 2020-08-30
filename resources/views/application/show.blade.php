@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('stylesheet')
+   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
 @stop
 
@@ -305,7 +307,7 @@
                     <div class="col-xs-4 col-sm-4 col-md-4">
                         <div class="form-group">
                             <strong>Get house on pointy as 1:</strong>
-                            <select required class="form-control" id="exampleFormControlSelect1" name="pontyAsDatenew">
+                            <select required class="form-control first_select_one" id="exampleFormControlSelect1 first_select_one" name="pontyAsDatenew">
                                 <option value="Residence of divisional Sub-Assistant Engineers atZigatola.">Residence of divisional Sub-Assistant Engineers atZigatola.</option>
                                 <option value="Residence of divisional Sub-Assistant Engineers at Tejgaon">Residence of divisional Sub-Assistant Engineers at Tejgaon</option>
                                 <option value="Residence of divisional Sub-Assistant Engineers at Rajarba">Residence of divisional Sub-Assistant Engineers at Rajarba</option>
@@ -386,7 +388,7 @@
                     <div class="col-xs-4 col-sm-4 col-md-4">
                         <div class="form-group">
                             <strong>Get house on pointy as 2:</strong>
-                            <select required class="form-control" id="exampleFormControlSelect1" name="pontyAsDatenew2">
+                            <select required class="form-control select_area_dubule" id="exampleFormControlSelect1 select_area_dubule" name="pontyAsDatenew2">
                                 <option value="Residence of divisional Sub-Assistant Engineers atZigatola.">Residence of divisional Sub-Assistant Engineers atZigatola.</option>
                                 <option value="Residence of divisional Sub-Assistant Engineers at Tejgaon">Residence of divisional Sub-Assistant Engineers at Tejgaon</option>
                                 <option value="Residence of divisional Sub-Assistant Engineers at Rajarba">Residence of divisional Sub-Assistant Engineers at Rajarba</option>
@@ -467,7 +469,7 @@
                     <div class="col-xs-4 col-sm-4 col-md-4">
                         <div class="form-group">
                             <strong>Get house on pointy as 3:</strong>
-                            <select required class="form-control" id="exampleFormControlSelect1" name="pontyAsDatenew3">
+                            <select required class="form-control js_edit_multiplee_three" id="exampleFormControlSelect1 js_edit_multiplee_three" name="pontyAsDatenew3">
                                 <option value="Residence of divisional Sub-Assistant Engineers atZigatola.">Residence of divisional Sub-Assistant Engineers atZigatola.</option>
                                 <option value="Residence of divisional Sub-Assistant Engineers at Tejgaon">Residence of divisional Sub-Assistant Engineers at Tejgaon</option>
                                 <option value="Residence of divisional Sub-Assistant Engineers at Rajarba">Residence of divisional Sub-Assistant Engineers at Rajarba</option>
@@ -592,6 +594,8 @@
 @endsection
 
 @section('javascript')
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
 <script type="text/javascript">
      $('#dateOfJoining2').datepicker({
         weekStart: 1,
@@ -650,6 +654,12 @@
         dateFormat: 'yy/mm/dd'
     });
     $('#date_of_loan2').datepicker("setDate", new Date());
+
+        $(document).ready(function() {
+            $('.first_select_one').select2();
+            $('.select_area_dubule').select2();
+            $('.js_edit_multiplee_three').select2();
+        });
 
 </script>
 @stop

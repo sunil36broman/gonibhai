@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 13, 2020 at 07:17 PM
+-- Generation Time: Aug 30, 2020 at 09:40 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.2.32
 
@@ -115,6 +115,9 @@ INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (2, 'App\\User', 26),
 (2, 'App\\User', 27),
 (2, 'App\\User', 28),
+(2, 'App\\User', 29),
+(2, 'App\\User', 30),
+(2, 'App\\User', 31),
 (3, 'App\\User', 11);
 
 -- --------------------------------------------------------
@@ -277,7 +280,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Hardik Savani', 'admin@gmail.com', NULL, '$2y$10$PBuhCq6KvJpdh0miTNrXOOYEmkw0Xrdra634rc2kdC07U2g3yAZ1.', 'nrKYtdUWFaghA4j1lUT1qvg7Rp4F1Xbv9TtR3x9qdGNjAtPfiyyphv1FlWMr', '2020-06-26 20:36:43', '2020-06-26 20:36:43'),
+(1, 'Hardik Savani', 'admin@gmail.com', NULL, '$2y$10$PBuhCq6KvJpdh0miTNrXOOYEmkw0Xrdra634rc2kdC07U2g3yAZ1.', 'ooxzALy1fcDQM3j46zlVefWNLbzC9H68bucLml5uRCWfILdapAuQR4iPdgTC', '2020-06-26 20:36:43', '2020-06-26 20:36:43'),
 (2, 'rony', 'rony@gmail.com', NULL, '$2y$10$Z4JIevlWP5/nFuAFVn.ok.XGS0gubAPICwgnueMlOmdDtGe2tHaxK', NULL, '2020-06-26 20:43:41', '2020-06-26 20:43:41'),
 (3, 'aaaaddd', 'admin1@gmail.com', NULL, '$2y$10$5My4pQLk5PkZf.sptEB3oOOqRntmmJiwVL7XxS9Ro0WPn2Imw5/Qm', NULL, '2020-07-22 02:23:23', '2020-07-22 02:23:23'),
 (4, 'sdfsdf', 'admin2@gmail.com', NULL, '$2y$10$AWF/JMS84wPHxtGWfFPegOwHprsJ4J5JD5z6Lqab7JkQqYv8mkzVO', NULL, '2020-07-22 02:29:39', '2020-07-22 02:29:39'),
@@ -304,7 +307,10 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (25, 'deletehobe', 'deletehobe@gmail.com', NULL, '$2y$10$5zTrhrtfdVXpczjdPdy07eeJvtI9ztujkOXKnbeyd1reLlM3trfUy', NULL, '2020-08-13 08:52:59', '2020-08-13 08:52:59'),
 (26, 'bampmas', 'bampmas@gmail.com', NULL, '$2y$10$VfQxlxigjO6F9efpvqxho.ngvv.IXyF8Dwd9cOG4H/7kFWn4Wkpem', NULL, '2020-08-13 09:18:52', '2020-08-13 09:18:52'),
 (27, 'newdate', 'newdate@gmail.com', NULL, '$2y$10$UJ2qwziERunlhIn6iX.oGu.iW3KgcGU8CTrYNKLS7jAsPJusxWACO', NULL, '2020-08-13 09:38:12', '2020-08-13 09:38:12'),
-(28, 'khanfamily', 'khanfamily@gmail.com', NULL, '$2y$10$yyykNmRDUkvaWFKpbG.CX.0nJTlTJam3OesS6kGKNzWY95qNp35T2', NULL, '2020-08-13 09:47:32', '2020-08-13 09:47:32');
+(28, 'khanfamily', 'khanfamily@gmail.com', NULL, '$2y$10$yyykNmRDUkvaWFKpbG.CX.0nJTlTJam3OesS6kGKNzWY95qNp35T2', NULL, '2020-08-13 09:47:32', '2020-08-13 09:47:32'),
+(29, 'testcorona', 'testcorona@gmail.com', NULL, '$2y$10$6Vfegp1u.6jwaESkL/0s.e58JbhYxYNXxo5MPOemzFUhYQwOp7RI6', NULL, '2020-08-30 12:50:18', '2020-08-30 12:50:18'),
+(30, 'coronatwo', 'coronatwo@gmail.com', NULL, '$2y$10$iTisJHAZvxaP8CujMGPOjOvFDiguJbjjg5e6jYXN.UfldWCCbF086', NULL, '2020-08-30 13:04:29', '2020-08-30 13:04:29'),
+(31, 'coronathree', 'coronathree@gmail.com', NULL, '$2y$10$RTch9z.DFL14Io9Hro3qSOI5xDisl4Saz9UrH4eTv3cs0V9Tn2BfC', NULL, '2020-08-30 13:41:49', '2020-08-30 13:41:49');
 
 --
 -- Indexes for dumped tables
@@ -405,7 +411,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- Constraints for dumped tables

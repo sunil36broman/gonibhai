@@ -102,7 +102,7 @@
                                 <tr>
                                     <td> 
                                        <div class="col-sm">
-                                       <img src="{{URL::to('/')}}/images/{{ $product->upload_photo }}" class="card-img" alt="...">
+                                       <img src="{{URL::to('/')}}/public/images/{{ $product->upload_photo }}" class="card-img" alt="...">
                                        </div>
                                     </td>
                                     <td>
